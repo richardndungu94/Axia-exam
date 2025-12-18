@@ -18,25 +18,41 @@ console.log("Title: Richard Ndung'u Exam.")
 
 // create express application
 const express = require("express");
+const mongoose =require("mongoose")
 const app = express()
-app.use(express.json())
+const cookieParser= require("cookie-parser")
+const dotenv =require ("dotenv")
+dotenv.config()
 
+
+
+app.use(express.json())
+app.use(cookieParser())
 
 
 //create route
-const userRoute = require ("./routes/user.route");
+const userRoute = require ("./routes/user.route")
+const postRoute= require("./routes/post.route")
+
+
+
 app.use(userRoute);
+app.use(postRoute)
+
+// error handling middleware
+
+app.use((error,req,res,next) => {
+    return res.status(error.status || 501).json({message:error.message || "server error"})
+
+})
 
 
-
-//create mongoose 
-const mongoose =require('mongoose')
 
 
 // create maongoose to links and connection
 
 mongoose 
-. connect("mongodb://localhost:27017/Axia-exam")
+. connect(process.env.DB_URL)
 . then (() => console.log("DB connectd succesfully"))
 . catch ((error)=> console.log("check error"));
 
