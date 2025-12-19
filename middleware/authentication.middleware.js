@@ -23,9 +23,9 @@ const authentication = (req,res,next) => {
             return res.status(401).json({message:"session expired"})
 
         }
-        req.user =payload; //we append req.user to the payload
+        req.user =payload;
     
-    next() // we call next finally
+    next() 
     });
 
 
