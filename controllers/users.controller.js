@@ -77,7 +77,7 @@ const loginUser=async(req,res,next) => {
 
 
     // we now create a token,
-    // create payload store the infomation like user id and role
+    // create payload to store the infomation like user id and role
     //create the token and sign it with the jwt secret
     //then we return the token nad user
     try {
@@ -124,8 +124,6 @@ const getAllUsers = async(req,res,next) => {
 
 
 
-
-
 //delete user
 
 const deleteUser = async (req,res,next) => {
@@ -141,8 +139,6 @@ const deleteUser = async (req,res,next) => {
         next(error)
     }
 };
-
-
 
 
 

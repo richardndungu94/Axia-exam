@@ -9,6 +9,14 @@ Create user model be able to:
 3. delete a user
 4. update a user
 
+UPdated the code
+1. created login endpoint
+2. created a token and set cookies for the client
+3. created authentication middleware to verify he token
+4. created error handling middleware 
+5 Added a post controller and post model
+6. Added authentication to the routes
+
 */
 
 
@@ -47,8 +55,6 @@ app.use((error,req,res,next) => {
 })
 
 
-
-
 // create maongoose to links and connection
 
 mongoose 
@@ -64,3 +70,56 @@ mongoose
 app.listen(4000,() => {
     console.log("Your application is now running")
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ######################################
+
+
+my notes to master critical tasks:
+
+npm init -y
+npm install express mongoose
+run npm to install these modules
+bcrypt
+jsonwebtoken
+cookie-parser
+dotenv
+
+jwt
+craete different folder for authentication mddlware
+add authentication to routes
+import jwt in routes folder,controller and middleware
+req.user=payload appends the object with the payload so that you are able to call it in controller
+verify the token
+
+Error handling:
+remember to add (error,req,res,next)
+always call the next() function or the code will break
+use next() function in  of consle.log in catch(error)
+
+dotenv
+here is where you hide your secret
+do not push it to github
+
+
+Authenticatin vs Autherization
+authentication just identifies a user 
+authorization limits the user on what they can do 
+
+
+
+
+
+
+*/

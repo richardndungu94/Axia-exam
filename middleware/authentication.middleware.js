@@ -2,11 +2,6 @@
 The authentication middleware
 we call the jwt 
 
-
-
-
-
-
 */
 
 
@@ -35,8 +30,6 @@ const authentication = (req,res,next) => {
 
 
 }
-
-
 
 
 
